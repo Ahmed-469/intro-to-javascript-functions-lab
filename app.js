@@ -28,8 +28,15 @@ Example: isAdult(21) should return 'Adult'.
 
 Complete the exercise in the space below:
 */
-
-
+ 
+const isAdult = (age) => {
+    if (age >= 18){
+    return "Adult";
+    }
+    else {
+    return "Minor";
+    }
+}
 
 console.log('Exercise 2 Result:', isAdult(21));
 
@@ -46,7 +53,13 @@ Example: isCharAVowel('a') should return true.
 Complete the exercise in the space below:
 */
 
-
+const isCharAVowel = character => {
+    if (character === "a" || character === "e" || character === "i" || character === "o" || character === "u") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 console.log('Exercise 3 Result:', isCharAVowel("a"));
 
@@ -62,14 +75,16 @@ should return 'johnsmith@example.com'.
 Complete the exercise in the space below:
 */
 
-
+const generateEmail = (name, domain) =>{
+    return `${name}@${domain}`;
+}
 
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
 
 /*
 Exercise 5: greetUser()
 
-Define a function called greetUser. It should take a name and a 
+Define a function called . It should take a name and a 
 time of day (morning, afternoon, evening) and return a personalized 
 greeting.
 
@@ -78,7 +93,9 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 Complete the exercise in the space below:
 */
 
-
+const greetUser = (name, timeOfDay) => {
+    return `Good ${timeOfDay}, ${name}`;
+}
 
 console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
 
@@ -93,7 +110,9 @@ Example: maxOfThree(17, 4, 9) should return 17.
 Complete the exercise in the space below:
 */
 
-
+const maxOfThree = (num1, num2, num3) => {
+    return Math.max(num1, num2, num3);
+}
 
 console.log('Exercise 6 Result:', maxOfThree(5, 10, 8));
 
@@ -109,7 +128,9 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 
-
+const calculateTip = (billAmount, tipPercentage) => {
+    return (billAmount * tipPercentage) / 100;
+}
 
 console.log('Exercise 7 Result:', calculateTip(50, 20));
 
@@ -127,7 +148,14 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 Complete the exercise in the space below:
 */
 
-
+const convertTemperature = (temperature, scale) => {
+    if (scale === 'C'){
+        return (temperature * 9/5) + 32;
+    }
+    else if (scale === 'F'){
+        return (temperature - 32) * 5/9;
+    }
+}
 
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
@@ -147,7 +175,20 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 Complete the exercise in the space below:
 */
 
-
+const basicCalculator = (num1, num2, operation) => {
+    if (operation === "add") {
+        return num1 + num2;
+    }
+    else if (operation === "subtract") {
+        return num1 - num2;
+    }
+    else if (operation === "multiply") {
+        return num1 * num2;
+    }
+    else if (operation === "divide") {
+        return num1 / num2;
+    }
+}
 
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
 
@@ -166,7 +207,23 @@ Example: calculateGrade(100) should return A.
 Complete the exercise in the space below:
 */
 
-
+const calculateGrade = (score) => {
+    if (score >= 90) {
+        return 'A';
+    }
+    else if (score >= 80) {
+        return 'B';
+    }
+    else if (score >= 70) {
+        return 'C';
+    }
+    else if (score >= 60) {
+        return 'D';
+    }
+    else {
+        return 'F';
+    }
+}
 
 console.log('Exercise 10 Result:', calculateGrade(85));
 
@@ -186,7 +243,12 @@ Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
 Complete the exercise in the space below:
 */
 
-
+const createUsername = (firstName, lastName) => {
+  const firstPart = firstName.slice(0, 3);
+  const lastPart = lastName.slice(0, 3);
+  const totalLength = firstName.length + lastName.length;
+  return firstPart + lastPart + totalLength;
+}
 
 console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
 
@@ -199,6 +261,8 @@ This function should return the count of arguments passed to it when called.
 Complete the exercise in the space below:
 */
 
-
+const numArgs = (...args) => {
+  return args.length;
+}
 
 console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
